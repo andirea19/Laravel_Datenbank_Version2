@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Start</title>
-    <link rel="stylesheet" href="app.css">
-    <link rel="stylesheet" href="quiz.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/app.css') }}">
+            <link rel="stylesheet" type="text/css" href="{{ asset('/css/quiz.css') }}">
+            <link rel="stylesheet" type="text/css" href="{{ asset('/css/highscore.css') }}">
+            <link rel="stylesheet" type="text/css" href="{{ asset('/css/quizapp.css') }}">
   </head>
   <body>
     <div class="container">

@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\AjaxController;
+
+Route::get('list', [AjaxController::class, 'index']);
+Route::get('show-user', [AjaxController::class, 'show']);
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
