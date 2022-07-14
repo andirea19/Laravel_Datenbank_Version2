@@ -1,0 +1,132 @@
+:root {
+    background-color: off-white;
+    font-size: 60%;
+    font-family: pt sans, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: pt sans, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: darkslategray;
+}
+
+h1,h2,
+h3,h4 {
+    margin: 1rem;
+}
+
+h1 {
+    font-size: 5rem;
+    color: darkslategray;
+    margin-bottom: 3rem;
+}
+
+h1 > span {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 3rem;
+     margin-bottom: 2rem;
+}
+
+h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/*Buttons*/
+
+.btn {
+    background-color: #ffb2ae;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+  /*  transition: all 0.3s ease-in-out; */
+}
+
+.btn:hover {
+    background-color: #ffb2ae;
+    color: white;
+    box-sizing: border-box;
+    box-shadow: inset 0 0 0 1px #ff4d4d;
+    transform: translate(-2px, -2px);
+    transition: all 0.3s ease-in-out;
+
+}
+
+/* Wenn noch nicht verfügbar */
+.btn[disabled] {
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+/* Container über die ganze Seite, damit alles in der Flexbox passt */
+.container {
+    width: 100%;
+    heitght: 100%;
+    max-width: 80rem;
+    display: flex;
+    justify-content: center;
+  /*  max-width: 1200px; */
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.container > * {
+    flex: 1;
+}
+
+.container > *:first-child {
+    margin-right: 2rem;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Formular */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+ }
+
+input {
+    width: 100%;
+    padding: 1rem;
+    width: 100%;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: lightslategray;
+    border-radius: 5px;
+    border: 0.1px solid;
+    box-shadow: 0 0.2 0 0.1rem grey;
+    transition: all 0.3s ease-in-out;
+}
+
+input::placeholder {
+    color: lightslategray;
+}

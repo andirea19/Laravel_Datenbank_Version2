@@ -1,0 +1,78 @@
+.choice-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    border-color: darkslategray;
+    border: 1px solid;
+    background-color: #f5f5f5; ;
+}
+
+.choice-prefix {
+    padding: auto;
+    font-size: 1.5rem;
+    background-color: #ffb2ae;
+    color: white;
+}
+
+.choice-text {
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: darkslategrey;
+    width: 100%;
+}
+
+.choice-container:hover {
+    background-color: #ffb2ae;
+    color: white;
+    box-sizing: border-box;
+    box-shadow: inset 0 0 0 1px #ff4d4d;
+    transform: translate(-2px, -2px);
+    transition: all 0.3s ease-in-out;
+}
+
+.correct-choice {
+    background-color: lime;
+    color: white;
+    box-sizing: border-box;
+}
+
+.incorrect-choice {
+    background-color: red;
+    color: white;
+    box-sizing: border-box;;
+}
+
+/* Header - als Übersicht
+ev inklusive Progess Bar*/
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #ffb2ae;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-bottom: 1px solid;
+    border-color: darkslategray;
+}
+
+.header-prefix {
+    padding: auto;
+    align self: center;
+    font-size: 1.5rem;
+    background-color: #ffb2ae;
+    color: white;
+}
+
+.header-main {
+    padding: auto;
+    align self: center;
+    font-size: 1.5rem;
+    color: darkslategrey;
+}
+
