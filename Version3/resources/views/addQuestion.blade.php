@@ -28,8 +28,11 @@
            <thead>
               <tr>
                  <th>Id</th>
-                 <th>Name</th>
-                 <th>Email</th>
+                <th>Frage-Text</th>
+                 <th>Antwort 1</th>
+                 <th>Antwort 2</th>
+                 <th>Antwort 3</th>
+                 <th>Antwort 4</th>
                  <td colspan="2">Action</td>
               </tr>
            </thead>
@@ -66,41 +69,24 @@
                 </div>
  
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">Email</label>
+                    <label class="col-sm-2 control-label">Antworten</label>
                     <div class="col-sm-12">
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email" value="" required="">
+                        <input type="text" class="form-control" id="answer1" name="answer1" placeholder="Antwort 1" value="" required="">
                     </div>
+                    <div class="col-sm-12">
+                        <input type="text" class="form-control" id="answer2" name="answer2" placeholder="Antwort 2" value="" required="">
                 </div>
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" id="answer3" name="answer3" placeholder="Antwort 3" value="" required="">
+                </div>
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" id="answer4" name="answer4" placeholder="Antwort 4" value="" required="">
             </form>
         </div>
     </div>
   </div>
 </div>
 
-
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
 <script>
   $(document).ready(function () {
     $.ajaxSetup({
@@ -109,15 +95,20 @@
         }
     });
  
-   /* When click show user */
+   /* Anzeigen, wenn ausgewählt*/
     $('body').on('click', '#show-user', function () {
       var user_id = $(this).data('id');
       $.get('ajax-crud/' + user_id +'/edit', function (data) {
          $('#userShowModal').html("User Details");
           $('#ajax-modal').modal('show');
-          $('#user_id').val(data.id);
-          $('#name').val(data.name);
-          $('#email').val(data.email);
+          $('#question_id').val(data.id);
+          $('#question_text').val(data.question_text);
+          $('#answer1').val(data.answer1);
+         $('#answer2').val(data.answer2);
+          $('#answer3').val(data.answer3);
+          $('#answer4').val(data.answer4);
+          $('#correct_answer').val(data.correct_answer);
+            
       })
    });
   });  
