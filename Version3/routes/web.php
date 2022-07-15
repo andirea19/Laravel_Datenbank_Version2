@@ -22,8 +22,30 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/quiz', function () {
+   return view('quiz');
+});
+
+//Route ::get('/quiz/{id}', function ($id) {
+//   return view('quiz', ['id' => $id]);
+//});
+
+Route ::get('/quiz/{id}/{question}', function ($id, $question) {
+   return view('quiz', ['id' => $id, 'question' => $question]);
+});
+
+Route ::get('/leaderboard', function () {
+   return view('leaderboard');
+});
+
+Route ::get('/highscore/{id}', function ($id) {
+   return view('highscore', ['id' => $id]);
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+
 
 require __DIR__.'/auth.php';
