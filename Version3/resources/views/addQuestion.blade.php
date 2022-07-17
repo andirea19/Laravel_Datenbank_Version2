@@ -33,16 +33,16 @@
                  <th>Antwort 2</th>
                  <th>Antwort 3</th>
                  <th>Antwort 4</th>
-                 <td colspan="2">Action</td>
+                 <td colspan="2">Eingeben</td>
               </tr>
            </thead>
-           <tbody id="users-crud">
-              @foreach($users as $u_info)
+           <tbody id="question_crud">
+              @foreach($question as $q_info)
               <tr id="user_id_{{ $u_info->id }}">
-                 <td>{{ $u_info->id  }}</td>
-                 <td>{{ $u_info->name }}</td>
-                 <td>{{ $u_info->email }}</td>
-                 <td><a href="javascript:void(0)" id="show-user" data-id="{{ $u_info->id }}" class="btn btn-info">Show</a></td>
+                 <td>{{ $q_info->id  }}</td>
+                 <td>{{ $q_info->text }}</td>
+                 <td>{{ $q_info->answer }}</td>
+                 <td><a href="javascript:void(0)" id="show-question" data-id="{{ $q_info->id }}" class="btn btn-info">Anzeigen</a></td>
               </tr>
               @endforeach
            </tbody>
@@ -62,9 +62,9 @@
             <form id="userForm" name="userForm" class="form-horizontal">
                <input type="hidden" name="user_id" id="user_id">
                 <div class="form-group">
-                    <label for="name" class="col-sm-2 control-label">Name</label>
+                    <label for="name" class="col-sm-2 control-label">Name - Text</label>
                     <div class="col-sm-12">
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" value="" maxlength="50" required="">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Text eingeben" value="" maxlength="50" required="">
                     </div>
                 </div>
  
@@ -97,9 +97,9 @@
  
    /* Anzeigen, wenn ausgewählt*/
     $('body').on('click', '#show-user', function () {
-      var user_id = $(this).data('id');
-      $.get('ajax-crud/' + user_id +'/edit', function (data) {
-         $('#userShowModal').html("User Details");
+      var question_id = $(this).data('id');
+      $.get('ajax-crud/' + question_id +'/edit', function (data) {
+         $('#userShowModal').html("Question Details");
           $('#ajax-modal').modal('show');
           $('#question_id').val(data.id);
           $('#question_text').val(data.question_text);

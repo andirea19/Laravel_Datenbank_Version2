@@ -13,8 +13,8 @@
             <h1 class="title m-b-md">
                 Schnelles Quiz
             </h1> 
-            <a class="btn" href="quiz.html" class="btn btn-primary">Starten</a>
-            <a class="btn btn-primary" href="highscore.html">Highscore</a>
+            <a class="btn" href="quiz" class="btn btn-primary">Starten</a>
+            <a class="btn btn-primary" href="highscore">Highscore</a>
         </div>
     </div>
     

@@ -22,6 +22,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//generelle Weiterleitung der Seiten möglich?
+Route::get('{page_name}', function($page_name)
+ {
+     //
+     return View::make('frontend/'.$page_name);
+ });
+
 Route::get('/quiz', function () {
    return view('quiz');
 });
@@ -41,7 +48,6 @@ Route ::get('/leaderboard', function () {
 Route ::get('/highscore/{id}', function ($id) {
    return view('highscore', ['id' => $id]);
 });
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');

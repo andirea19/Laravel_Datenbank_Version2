@@ -18,7 +18,7 @@ Highscores - Leaderboard
 <ul class="highscore-list"></ul>
 
 <a class="btn" href="quiz.html" class="btn btn-primary">Starten</a>
-<a class="btn btn-primary" href="index.html">Home</a>
+<a class="btn btn-primary" href="index">Home</a>
 </div>
 </div>
 
