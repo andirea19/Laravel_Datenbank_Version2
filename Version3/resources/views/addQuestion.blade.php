@@ -9,8 +9,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> 
  
  <style>
    .container{
@@ -42,7 +42,7 @@
                  <td>{{ $q_info->id  }}</td>
                  <td>{{ $q_info->text }}</td>
                  <td>{{ $q_info->answer }}</td>
-                 <td><a href="javascript:void(0)" id="show-question" data-id="{{ $q_info->id }}" class="btn btn-info">Anzeigen</a></td>
+                 <td><a href="javascript:void(0)" class="show-question" data-id="{{ $q_info->id }}" class="btn btn-info">Anzeigen</a></td>
               </tr>
               @endforeach
            </tbody>
@@ -81,6 +81,7 @@
                 </div>
                 <div class="col-sm-12">
                     <input type="text" class="form-control" id="answer4" name="answer4" placeholder="Antwort 4" value="" required="">
+                </div>
             </form>
         </div>
     </div>
@@ -96,17 +97,21 @@
     });
  
    /* Anzeigen, wenn ausgewählt*/
-    $('body').on('click', '#show-user', function () {
-      var question_id = $(this).data('id');
-      $.get('ajax-crud/' + question_id +'/edit', function (data) {
+    $('body').on('click', '.show-question', function (e) {
+       e.preventDefault(); 
+       // browser 
+       var question_id = $(this).data('id');
+      $.get('/ajax-crud/' + question_id +'/edit', function (data) {
          $('#userShowModal').html("Question Details");
           $('#ajax-modal').modal('show');
           $('#question_id').val(data.id);
+          //als json übergeben
           $('#question_text').val(data.question_text);
           $('#answer1').val(data.answer1);
          $('#answer2').val(data.answer2);
           $('#answer3').val(data.answer3);
           $('#answer4').val(data.answer4);
+          // oben
           $('#correct_answer').val(data.correct_answer);
             
       })

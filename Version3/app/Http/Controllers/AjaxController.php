@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Question;
 use Illuminate\Http\Request;
 
 use Redirect,Response;
@@ -17,7 +18,7 @@ class AjaxController extends Controller
      */
     public function index()
     {
-        $data['users'] = User::orderBy('id','desc')->paginate(8);
+        $data['questions'] = User::orderBy('id','desc')->paginate(8);
    
         return view('list',$data);
     }
@@ -28,5 +29,11 @@ class AjaxController extends Controller
         $user  = User::where($where)->first();
  
         return Response::json($user);
+    }
+
+    public function edit($id)
+    {
+        $question = Question::find($id);
+        return response()->json([$question]);
     }
 }
