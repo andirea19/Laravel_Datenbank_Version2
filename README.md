@@ -1,2 +1,3 @@
-# Laravel_Datenbank_Version2
+# Laravel Datenbank Version2
 Version 2 der Datanbank mit Laravel
+SQL
